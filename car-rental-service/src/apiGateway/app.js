@@ -1,13 +1,17 @@
 import express from 'express';
 import http from 'http';
-import userRoutes from './routes/user.js';
-import swaggerUI from 'swagger-ui-express';
-import {swaggerSpec} from './swagger.js';
 import logger from './logger/index.js';
-import utils from './utils.js'
+import utils from './utils.js';
+import httpClient from './httpClient.js';
 
+const app = express();
+const PORT = 3000;
 
-const app = new express();
+const USER_SERVICE_ENDPOINT = utils.getUserServiceEndpoint();
+const RENTAL_SERVICE_ENDPOINT = utils.getRentalServiceEndpoint();
+
+app.use(express.json());
+
 /*###########################################
 MIDDLEWARE
 ###########################################*/
@@ -18,16 +22,24 @@ app.use(express.json());
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-
-// Serve Swagger documentation
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
-
-app.use('/health-check', (req, res) => {
+app.get('/health-check', (req, res) => {
     logger.info("information log");
-    res.status(200).send({status: "User service NodeJs is running fine"})
+    res.status(200).send({status: "API Gateway service NodeJs is running fine"})
     logger.info("TEST");
 })
-app.use('/user', userRoutes);
+
+app.get('/service-check', async (req, res) => {
+    const serviceEndpointStatus = await httpClient.fetchData(null, USER_SERVICE_ENDPOINT + '/health-check', null);
+    const rentalEndpointStatus = await httpClient.fetchData(null, RENTAL_SERVICE_ENDPOINT + '/health-check', null);
+    const status = {
+        "userServiceEndpoint": JSON.parse(serviceEndpointStatus).status,
+        "rentalServiceEndpoint": JSON.parse(rentalEndpointStatus).status
+    }
+    console.log( JSON.parse(serviceEndpointStatus))
+
+    await res.send(status)
+
+})
 
 /*###########################################
 GLOBAL HANDLERS
@@ -46,14 +58,11 @@ app.use((err, req, res, next) => {
     logger.info(err)
     res.status(500).send('500 - Internal Server Error');
 });
-  
-// Example route that throws an error
-
 
 /*###########################################
 APP START
 ###########################################*/
-const port = process.env.SERVER_PORT || '3000';
+const port = process.env.SERVER_PORT || '8080';
 app.set('port', port);
 
 const server = http.createServer(app);

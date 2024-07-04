@@ -22,7 +22,7 @@ const devLogger = () => {
     transports: [
       new transports.Console(),
       new transports.File({
-        filename: '../../logs/dev/userService.log',
+        filename: '../../logs/dev/apiGatewayService.log',
 
       })
     ],

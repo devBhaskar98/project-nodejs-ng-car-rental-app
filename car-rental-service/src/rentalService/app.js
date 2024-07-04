@@ -1,6 +1,6 @@
 import express from 'express';
 import http from 'http';
-import userRoutes from './routes/user.js';
+import adminRoutes from './routes/admin.js';
 import swaggerUI from 'swagger-ui-express';
 import {swaggerSpec} from './swagger.js';
 import logger from './logger/index.js';
@@ -24,10 +24,10 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.use('/health-check', (req, res) => {
     logger.info("information log");
-    res.status(200).send({status: "User service NodeJs is running fine"})
+    res.status(200).send({status: "Rental service NodeJs is running fine"})
     logger.info("TEST");
 })
-app.use('/user', userRoutes);
+app.use('/vehicle', adminRoutes);
 
 /*###########################################
 GLOBAL HANDLERS
