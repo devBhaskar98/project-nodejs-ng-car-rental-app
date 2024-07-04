@@ -1,0 +1,20 @@
+{
+  "name": "car-rental-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "gulp install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "del": "^7.1.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.4.2",
+    "gulp": "^5.0.0"
+  }
+}
