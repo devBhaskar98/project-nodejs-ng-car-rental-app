@@ -1,10 +1,12 @@
 import express from 'express';
 import http from 'http';
 import adminRoutes from './src/routes/admin.js';
+import fileUploadRouters from './src/routes/fileUpload.js'
 import swaggerUI from 'swagger-ui-express';
 import {swaggerSpec} from './swagger.js';
 import logger from './src/logger/index.js';
 import utils from './utils.js'
+
 
 
 const app = new express();
@@ -18,6 +20,9 @@ app.use(express.json());
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// For serving files from the public directory
+app.use(express.static('public'));
+
 
 // Serve Swagger documentation
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
@@ -26,7 +31,9 @@ app.use('/health-check', (req, res) => {
     logger.info("health check ok");
     res.status(200).send({status: "Rental service NodeJs is running fine"})
 })
+
 app.use('/vehicle', adminRoutes);
+app.use('/file', fileUploadRouters)
 
 /*###########################################
 GLOBAL HANDLERS
