@@ -1,4 +1,5 @@
 import vehicleDao from "../dao/vehicleDao.js";
+import fileUploadController from "./fileUploadController.js";
 
 let vehicleController = {};
 
@@ -8,6 +9,7 @@ vehicleController.getAllVehicles = async (req, res) => {
 }
 
 vehicleController.createVehicle = async (req, res) => {
+    // TODO: Upload Image
     const vehicleId = await vehicleDao.createVehicle(req.body);
     res.status(200).json({ message: `Vehicle with name "${req.body.name}" saved successfully.` });
 };

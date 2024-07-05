@@ -7,10 +7,16 @@ import swaggerUI from 'swagger-ui-express';
 import {swaggerSpec} from './swagger.js';
 import logger from './src/logger/index.js';
 import utils from './utils.js'
-
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 const app = new express();
+
+// For getting the __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /*###########################################
 MIDDLEWARE
 ###########################################*/
@@ -21,8 +27,12 @@ app.use(express.json());
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// For serving files from the public directory
-app.use(express.static('public'));
+// // For serving files from the public directory
+// app.use(express.static('public'));
+
+// For serving images from the src/war/images directory
+const imagesPath = path.join(__dirname, 'src', 'war', 'images');
+app.use('/images', express.static(imagesPath));
 
 
 // Serve Swagger documentation

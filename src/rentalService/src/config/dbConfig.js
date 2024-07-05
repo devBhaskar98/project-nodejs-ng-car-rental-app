@@ -5,6 +5,7 @@ let db = {
     name: 'mySql'
 }
 
+//TODO: use .env 
 // Create the connection to database
 db.connection = await mysql.createConnection({
   host: 'localhost',
