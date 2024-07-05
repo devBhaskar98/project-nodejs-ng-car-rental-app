@@ -1,6 +1,11 @@
 import User from '../models/user.js'; // Adjust the path to where your User model is located
 import config from '../config/config.js'; // Adjust the path to your config
 import jwt from 'jwt-simple'; // Import jwt-simple
+import httpClient from '../../httpClient.js';
+import utils from '../../utils.js';
+
+// FIXME: duplicate
+const USER_SERVICE_ENDPOINT = utils.getUserServiceEndpoint();
 
 // Login function using async/await
 export const login = async (req, res) => {
@@ -27,22 +32,36 @@ export const login = async (req, res) => {
 };
 
 // Register function
-export const register = (req, res) => {
+export const register = async (req, res) => {
+
+  let isUserCreated = false;
+  const data = req.body;
+
   User.register(
-    new User({ name: req.body.name, username: req.body.username }),
-    req.body.password,
+    new User({ name: req.body.name, username: req.body.username }), req.body.password,
     (err, msg) => {
       if (err) {
         res.status(500).json({ message: 'Registration failed', error: err.message });
       } else {
-        res.json({ message: 'Registration successful' });
+        isUserCreated = true;
       }
     }
   );
 
-  // update user service
-  
+  const body = {  
+    name: data.name,
+    email: data.email ,
+    address: data.address,
+    profile_img: data.profile_img,
+    user_type: data.user_type
+  }
 
+  if (!isUserCreated) {
+    let response = await httpClient.postData(USER_SERVICE_ENDPOINT + '/user/create', body);
+    response = JSON.parse(response).data;
+    response.username = data.username;
+    res.json(response);
+  }
 
 
 

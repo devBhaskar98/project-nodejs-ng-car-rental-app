@@ -11,3 +11,9 @@
 
 1. Unit Test
 2. Show the spinner in terminal when installing - Node Js
+
+
+
+### P3.
+
+1. restart server from failure

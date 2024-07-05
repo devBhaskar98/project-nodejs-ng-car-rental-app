@@ -50,8 +50,8 @@ app.get('/health-check', (req, res) => {
 })
 
 app.get('/service-check', async (req, res) => {
-    const serviceEndpointStatus = await httpClient.fetchData(null, USER_SERVICE_ENDPOINT + '/health-check', null);
-    const rentalEndpointStatus = await httpClient.fetchData(null, RENTAL_SERVICE_ENDPOINT + '/health-check', null);
+    const serviceEndpointStatus = await httpClient.fetchData(USER_SERVICE_ENDPOINT + '/health-check');
+    const rentalEndpointStatus = await httpClient.fetchData(RENTAL_SERVICE_ENDPOINT + '/health-check');
     const status = {
         "userServiceEndpoint": JSON.parse(serviceEndpointStatus).status,
         "rentalServiceEndpoint": JSON.parse(rentalEndpointStatus).status

@@ -15,8 +15,9 @@ userController.getAllUser = async (req, res) => {
 
 userController.createUser = async (req, res) => {
     // TODO: Upload Image
-    const vehicleId = await userDao.createUser(req.body);
-    res.status(200).json({ message: `User with name "${req.body.name}" saved successfully.` });
+    const userDetails = await userDao.createUser(req.body);
+
+    res.status(200).json(userDetails[0]);
 };
 
 userController.deleteUser = async (req, res) => {

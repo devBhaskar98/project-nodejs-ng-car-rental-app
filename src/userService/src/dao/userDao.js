@@ -1,5 +1,7 @@
 // A simple SELECT query
+
 import db from "../config/dbConfig.js";
+import logger from '../logger/index.js';
 
 let userDao = {};
 
@@ -42,25 +44,24 @@ userDao.getAllUsers = async () => {
   }
 }
 
-userDao.createUser = async (data) => {
-  try {
-    const { name, email, address, profile_img, user_type } = data;
-    const query = 'INSERT INTO user ( name, email, address, profile_img, user_type ) VALUES (?, ?, ?, ?, ?)';
+userDao.createUser = async (data, callback) => {
+  logger.info("request to create user with name", data.name);
+  const { name, email, address, profile_img, user_type } = data;
+  const query = 'INSERT INTO user (name, email, address, profile_img, user_type) VALUES (?, ?, ?, ?, ?)';
+  const values = [name, email, address, profile_img, user_type];
 
-    await dbConnection.query(query, [name, email, address, profile_img, user_type], (err, output) => {
-      if (err) {
-        console.error('Error saving user:', err.stack);
-        // callback(err, null);
-        return;
-      }
-      return output;
-    }
+  const [queryResults, fields] = await dbConnection.query(
+    query, values
+  );
 
-    );
-  } catch (err) {
-    console.log(err);
-  }
-}
+  const fetchQuery = 'SELECT * FROM user WHERE user_id = ?';
+  const [queryUserResult, userFields] = await dbConnection.query(
+    fetchQuery, queryResults.insertId 
+  );
+
+
+  return queryUserResult;
+};
 
 userDao.deleteUser = async (user_id) => {
   try {
