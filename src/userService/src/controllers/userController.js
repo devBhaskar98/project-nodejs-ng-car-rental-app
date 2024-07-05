@@ -1,17 +1,36 @@
-// ES6 module syntax
-const getUser = (req, res) => {
-    res.send("get user");
-};
+import userDao from "../dao/userDao.js";
 
+let userController = {};
 
-const postUser = (req, res) => {
-    res.send("post user");
-};
-
-
-const userController = {
-    getUser,
-    postUser
+userController.getUser = async (req, res) => {
+    const output = await userDao.getUser(req.params.id);
+    res.send(output);
 }
+
+
+userController.getAllUser = async (req, res) => {
+    const output = await userDao.getAllUsers();
+    res.status(200).send(output);
+};
+
+userController.createUser = async (req, res) => {
+    // TODO: Upload Image
+    const vehicleId = await userDao.createUser(req.body);
+    res.status(200).json({ message: `User with name "${req.body.name}" saved successfully.` });
+};
+
+userController.deleteUser = async (req, res) => {
+    const output = await userDao.deleteUser(req.params.id);
+    res.status(200).json({ message: `User with ID "${userId}" deleted successfully.` });
+};
+
+
+userController.getUserProfileImage = async (req, res) => {
+    const output = await userDao.getUserProfileImage(req.params.id);
+    res.send(output);
+}
+
+
+
 
 export default userController;
