@@ -1,9 +1,9 @@
 import express from 'express';
 import http from 'http';
-import adminRoutes from './routes/admin.js';
+import adminRoutes from './src/routes/admin.js';
 import swaggerUI from 'swagger-ui-express';
 import {swaggerSpec} from './swagger.js';
-import logger from './logger/index.js';
+import logger from './src/logger/index.js';
 import utils from './utils.js'
 
 
@@ -23,9 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.use('/health-check', (req, res) => {
-    logger.info("information log");
+    logger.info("health check ok");
     res.status(200).send({status: "Rental service NodeJs is running fine"})
-    logger.info("TEST");
 })
 app.use('/vehicle', adminRoutes);
 

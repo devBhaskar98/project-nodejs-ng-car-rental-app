@@ -1,6 +1,6 @@
 import express from 'express';
 import http from 'http';
-import logger from './logger/index.js';
+import logger from './src/logger/index.js';
 import utils from './utils.js';
 import httpClient from './httpClient.js';
 
@@ -23,9 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/health-check', (req, res) => {
-    logger.info("information log");
+    logger.info("health check ok");
     res.status(200).send({status: "API Gateway service NodeJs is running fine"})
-    logger.info("TEST");
 })
 
 app.get('/service-check', async (req, res) => {

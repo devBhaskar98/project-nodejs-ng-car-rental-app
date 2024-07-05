@@ -1,4 +1,4 @@
-import appConstant from "./constant/appConstant.js";
+import appConstant from "./src/constant/appConstant.js";
 import { URL } from 'url';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
