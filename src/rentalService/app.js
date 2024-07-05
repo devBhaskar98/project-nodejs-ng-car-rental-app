@@ -1,7 +1,8 @@
 import express from 'express';
 import http from 'http';
 import adminRoutes from './src/routes/admin.js';
-import fileUploadRouters from './src/routes/fileUpload.js'
+import fileUploadRoutes from './src/routes/fileUpload.js'
+import vehicleRoutes from './src/routes/vehicle.js';
 import swaggerUI from 'swagger-ui-express';
 import {swaggerSpec} from './swagger.js';
 import logger from './src/logger/index.js';
@@ -32,8 +33,9 @@ app.use('/health-check', (req, res) => {
     res.status(200).send({status: "Rental service NodeJs is running fine"})
 })
 
-app.use('/vehicle', adminRoutes);
-app.use('/file', fileUploadRouters)
+app.use('', adminRoutes);
+app.use('/file', fileUploadRoutes)
+app.use('/vehicle', vehicleRoutes)
 
 /*###########################################
 GLOBAL HANDLERS
