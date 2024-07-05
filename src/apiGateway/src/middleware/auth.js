@@ -2,7 +2,7 @@
 import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import User from '../models/user.js'; // Adjust path as per your project structure
-import cfg from '../config.js'; // Adjust path as per your project structure
+import cfg from '../config/config.js'; // Adjust path as per your project structure
 
 const jwtOptions = {
   secretOrKey: cfg.jwtSecret,

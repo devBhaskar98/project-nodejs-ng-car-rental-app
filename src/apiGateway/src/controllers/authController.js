@@ -1,5 +1,5 @@
 import User from '../models/user.js'; // Adjust the path to where your User model is located
-import config from '../config.js'; // Adjust the path to your config
+import config from '../config/config.js'; // Adjust the path to your config
 import jwt from 'jwt-simple'; // Import jwt-simple
 
 // Login function using async/await
@@ -39,6 +39,13 @@ export const register = (req, res) => {
       }
     }
   );
+
+  // update user service
+  
+
+
+
+
 };
 
 // Logout route handler

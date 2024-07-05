@@ -6,6 +6,31 @@ let vehicleDao = {};
 const dbConnection = db.connection;
 
 
+vehicleDao.getVehicle = async (vehicle_id) => {
+
+  try {
+      const [queryResults, fields] = await dbConnection.query(
+        'SELECT * FROM vehicle where vehicle_id = ?', vehicle_id
+      );
+
+      return queryResults
+    } catch (err) {
+      console.log(err);
+    }
+}
+
+vehicleDao.getVehicleImage = async (vehicle_id) => {
+
+  try {
+      const [queryResults, fields] = await dbConnection.query(
+        'SELECT vehicle_id, img_path FROM vehicle where vehicle_id = ?', vehicle_id
+      );
+
+      return queryResults
+    } catch (err) {
+      console.log(err);
+    }
+}
 
 vehicleDao.getAllVehicles = async () => {
     try {
@@ -18,7 +43,6 @@ vehicleDao.getAllVehicles = async () => {
         console.log(err);
       }
 }
-
 
 vehicleDao.createVehicle = async (data) => {
     try {
