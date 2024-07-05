@@ -8,4 +8,5 @@
 
 ## P2
 
-1.  Show the spinner in terminal when installing
+1. Unit Test
+2. Show the spinner in terminal when installing - Node Js
