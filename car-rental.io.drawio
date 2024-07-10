@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2024-07-05T07:26:27.610Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="Vv8HQ5ju7CZX1Mx6mr8z" version="24.6.4" type="device" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-07-08T07:07:26.476Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="hNv1phziamKTg-pgkmH9" version="24.6.4" type="device" pages="2">
   <diagram id="KfR-qvKGwJpqS7gBh0e4" name="Car-Rental-Service">
-    <mxGraphModel dx="1674" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1762" dy="813" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="lkF-fw1_CxuEREfasKSE-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="lkF-fw1_CxuEREfasKSE-15" edge="1">
+        <mxCell id="lkF-fw1_CxuEREfasKSE-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="720" y="480" as="sourcePoint" />
           </mxGeometry>
@@ -56,42 +56,42 @@
         <mxCell id="lkF-fw1_CxuEREfasKSE-17" value="my sql db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="830" y="320" width="60" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rLLcDVbcR_JufIRMODQe-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rLLcDVbcR_JufIRMODQe-1" target="rLLcDVbcR_JufIRMODQe-2">
+        <mxCell id="rLLcDVbcR_JufIRMODQe-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="rLLcDVbcR_JufIRMODQe-1" target="rLLcDVbcR_JufIRMODQe-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rLLcDVbcR_JufIRMODQe-1" value="vehicle_service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rLLcDVbcR_JufIRMODQe-1" value="user_service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="600" y="570" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="rLLcDVbcR_JufIRMODQe-2" value="my sql db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="rLLcDVbcR_JufIRMODQe-2" value="mysql" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="830" y="560" width="60" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="ER-Diagram" id="OxqZ3Si_hgWhyGlnItvY">
-    <mxGraphModel dx="2441" dy="686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2524" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-55" value="User" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-55" value="User" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-390" y="270" width="160" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-56" value="+ user_id&lt;div&gt;+ name&lt;/div&gt;&lt;div&gt;+ email&lt;/div&gt;&lt;div&gt;+ password&lt;/div&gt;&lt;div&gt;+ address&lt;/div&gt;&lt;div&gt;+ profile_img&lt;/div&gt;&lt;div&gt;+ user_type&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="fHIIb7BNLTSF1y6XhI9Q-55">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-56" value="+ user_id&lt;div&gt;+ name&lt;/div&gt;&lt;div&gt;+ email&lt;/div&gt;&lt;div&gt;+ password&lt;/div&gt;&lt;div&gt;+ address&lt;/div&gt;&lt;div&gt;+ profile_img&lt;/div&gt;&lt;div&gt;+ user_type&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="fHIIb7BNLTSF1y6XhI9Q-55" vertex="1">
           <mxGeometry y="50" width="160" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-57" value="vehicle" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-57" value="vehicle" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="60" y="100" width="160" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-58" value="+ vehicle_id&lt;div&gt;+ name&lt;/div&gt;&lt;div&gt;+ mileage&lt;/div&gt;&lt;div&gt;+ weight_load&lt;/div&gt;&lt;div&gt;+ color&lt;/div&gt;&lt;div&gt;+ engine_cc&lt;/div&gt;&lt;div&gt;+ location&lt;/div&gt;&lt;div&gt;+ is_rented&lt;/div&gt;&lt;div&gt;+ rent_price_per_day&lt;/div&gt;&lt;div&gt;+ rent_price_per_month&lt;/div&gt;&lt;div&gt;+ is_inspected&lt;/div&gt;&lt;div&gt;+ created_date&lt;/div&gt;&lt;div&gt;+ created_by_id&lt;/div&gt;&lt;div&gt;+ last_updated_by_id&lt;/div&gt;&lt;div&gt;+ last_updated_dt&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="fHIIb7BNLTSF1y6XhI9Q-57">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-58" value="+ vehicle_id&lt;div&gt;+ name&lt;/div&gt;&lt;div&gt;+ mileage&lt;/div&gt;&lt;div&gt;+ weight_load&lt;/div&gt;&lt;div&gt;+ color&lt;/div&gt;&lt;div&gt;+ engine_cc&lt;/div&gt;&lt;div&gt;+ location&lt;/div&gt;&lt;div&gt;+ is_rented&lt;/div&gt;&lt;div&gt;+ rent_price_per_day&lt;/div&gt;&lt;div&gt;+ rent_price_per_month&lt;/div&gt;&lt;div&gt;+ is_inspected&lt;/div&gt;&lt;div&gt;+ created_date&lt;/div&gt;&lt;div&gt;+ created_by_id&lt;/div&gt;&lt;div&gt;+ last_updated_by_id&lt;/div&gt;&lt;div&gt;+ last_updated_dt&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="fHIIb7BNLTSF1y6XhI9Q-57" vertex="1">
           <mxGeometry y="50" width="160" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="fHIIb7BNLTSF1y6XhI9Q-57" source="fHIIb7BNLTSF1y6XhI9Q-58" target="fHIIb7BNLTSF1y6XhI9Q-58">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="fHIIb7BNLTSF1y6XhI9Q-57" source="fHIIb7BNLTSF1y6XhI9Q-58" target="fHIIb7BNLTSF1y6XhI9Q-58" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-59" value="vehicle_rent_master" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-59" value="vehicle_rent_master" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="60" y="460" width="160" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-60" value="+ rent_id&lt;div&gt;+ vehicle_id&lt;div&gt;+ rental_user_id&lt;/div&gt;&lt;div&gt;+ rental_period_start_dt&lt;/div&gt;&lt;div&gt;+ rental_period_last_dt&lt;/div&gt;&lt;div&gt;+ overdue_days&lt;/div&gt;&lt;div&gt;+ rental_return_dt&lt;/div&gt;&lt;div&gt;+ created_by&lt;/div&gt;&lt;div&gt;+ created_dt&lt;/div&gt;&lt;div&gt;+ last_updated_by&lt;/div&gt;&lt;div&gt;+ last_updated_Dt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="fHIIb7BNLTSF1y6XhI9Q-59">
+        <mxCell id="fHIIb7BNLTSF1y6XhI9Q-60" value="+ rent_id&lt;div&gt;+ vehicle_id&lt;div&gt;+ rental_user_id&lt;/div&gt;&lt;div&gt;+ rental_period_start_dt&lt;/div&gt;&lt;div&gt;+ rental_period_last_dt&lt;/div&gt;&lt;div&gt;+ overdue_days&lt;/div&gt;&lt;div&gt;+ rental_return_dt&lt;/div&gt;&lt;div&gt;+ created_by&lt;/div&gt;&lt;div&gt;+ created_dt&lt;/div&gt;&lt;div&gt;+ last_updated_by&lt;/div&gt;&lt;div&gt;+ last_updated_Dt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="fHIIb7BNLTSF1y6XhI9Q-59" vertex="1">
           <mxGeometry y="50" width="160" height="210" as="geometry" />
         </mxCell>
       </root>

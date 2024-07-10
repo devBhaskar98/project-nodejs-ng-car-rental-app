@@ -23,7 +23,7 @@ const routes: Routes = [
     component: ProductsComponent
   },
   {
-    path: 'new-product',
+    path: 'new-vehicle',
     component: NewProductComponent
   }
 ];

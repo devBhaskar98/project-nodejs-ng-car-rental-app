@@ -17,3 +17,12 @@
 ### P3.
 
 1. restart server from failure
+
+#### P4.
+
++ store all the response somewhere in node js project
++ pagination
++ sorting
++ list vehicle
++ add vehicle
++ debugging
