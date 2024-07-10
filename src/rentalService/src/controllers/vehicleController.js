@@ -10,7 +10,12 @@ vehicleController.getVehicle = async (req, res) => {
 }
 
 vehicleController.getAllVehicles = async (req, res) => {
-    const output = await vehicleDao.getAllVehicles();
+    const page = {
+        number: parseInt(req.query.page_number, 10) || 1,
+        size: parseInt(req.query.page_size, 10) || 5
+    }
+
+    const output = await vehicleDao.getAllVehicles(page);
     res.send(output);
 }
 
