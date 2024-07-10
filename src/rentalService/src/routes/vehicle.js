@@ -3,11 +3,11 @@ import vehicleController from '../controllers/vehicleController.js';
 
 const router = express.Router();
 
+router.get('', vehicleController.getAllVehicles);
+
 router.get('/:id', vehicleController.getVehicle);
 
 router.get('/image/:id', vehicleController.getVehicleImage)
-
-router.get('', vehicleController.getAllVehicles);
 
 router.post('/create', vehicleController.createVehicle);
 
