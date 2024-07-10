@@ -11,18 +11,15 @@
 
 1. Unit Test
 2. Show the spinner in terminal when installing - Node Js
-
+3. Cookie demo
+4. Cache demo
 
 
 ### P3.
 
-1. restart server from failure
+1. restart server from failure 
 
 #### P4.
 
 + store all the response somewhere in node js project
-+ pagination
 + sorting
-+ list vehicle
-+ add vehicle
-+ debugging

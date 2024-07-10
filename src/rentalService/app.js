@@ -9,6 +9,8 @@ import logger from './src/logger/index.js';
 import utils from './utils.js'
 import path from 'path';
 import { fileURLToPath } from 'url';
+import i18n from './src/config/i18n.js'; // Adjust the path as necessary
+import i18nextMiddleware from 'i18next-http-middleware';
 
 
 const app = new express();
@@ -34,13 +36,23 @@ app.use(express.urlencoded({ extended: true }));
 const imagesPath = path.join(__dirname, 'src', 'war', 'images');
 app.use('/images', express.static(imagesPath));
 
+// Use i18next middleware
+app.use(i18nextMiddleware.handle(i18n));
+
+app.get('/', (req, res) => {
+    console.log('Detected language:', req.language);
+    console.log('Configured languages:', req.i18n.languages);
+    res.send(req.t('welcome'));
+});
 
 // Serve Swagger documentation
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.use('/health-check', (req, res) => {
+    console.log('Detected language:', req.language);
+    console.log('Configured languages:', req.i18n.languages);
     logger.info("health check ok");
-    res.status(200).send({status: "Rental service NodeJs is running fine"})
+    res.status(200).send(req.t(`welcome`))
 })
 
 app.use('', adminRoutes);
