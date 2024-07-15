@@ -12,12 +12,19 @@ import User from './src/models/user.js';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import dbConfig from './src/config/dbConfig.js';
+import discoveryConfig from './src/config/discoveryConfig.js';
+import appConstant from './src/constant/appConstant.js';
+import { stat } from 'fs';
 
 const app = express();
 const PORT = 3000;
 
-const USER_SERVICE_ENDPOINT = utils.getUserServiceEndpoint();
-const RENTAL_SERVICE_ENDPOINT = utils.getRentalServiceEndpoint();
+const USER_SERVICE_ENDPOINT = await discoveryConfig.getEndpoint(appConstant.userServiceName);
+const RENTAL_SERVICE_ENDPOINT = await discoveryConfig.getEndpoint(appConstant.rentalServiceName);
+
+
+// console.log('POINT', USER_SERVICE_ENDPOINT);
+// console.log('POINT', RENTAL_SERVICE_ENDPOINT);
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,14 +59,14 @@ app.get('/health-check', (req, res) => {
 app.get('/service-check', async (req, res) => {
     const serviceEndpointStatus = await httpClient.fetchData(USER_SERVICE_ENDPOINT + '/health-check');
     const rentalEndpointStatus = await httpClient.fetchData(RENTAL_SERVICE_ENDPOINT + '/health-check');
+
     const status = {
         "userServiceEndpoint": JSON.parse(serviceEndpointStatus).status,
         "rentalServiceEndpoint": JSON.parse(rentalEndpointStatus).status
     }
-    console.log( JSON.parse(serviceEndpointStatus))
 
+    logger.info("service status", status);
     await res.send(status)
-
 })
 
 app.use(auth.initialize());

@@ -49,12 +49,9 @@ app.get('/', (req, res) => {
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.use('/health-check', (req, res) => {
-    console.log('Detected language:', req.language);
-    console.log('Configured languages:', req.i18n.languages);
     logger.info("health check ok");
-    res.status(200).send(req.t(`welcome`))
+    res.status(200).send({status: "Rental service NodeJs is running fine"})
 })
-
 app.use('', adminRoutes);
 app.use('/file', fileUploadRoutes)
 app.use('/vehicle', vehicleRoutes)

@@ -1,6 +1,7 @@
 const appConstant = {
-    "user_service_endpoint": "http://localhost:9091",
-    "rental_service_endpoint": "http://localhost:9092"
+    userServiceName: "userService",
+    rentalServiceName: "rentalService",
+    discovery_endpoint: `${process.env.DISCOVERY_ENDPOINT}`
 }
 
 export default appConstant;

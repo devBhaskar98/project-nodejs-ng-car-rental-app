@@ -16,7 +16,7 @@ httpClient.fetchData = async (ENDPOINT) => {
       status: await response.status,
       data: await response.json()
     }
-    console.log('Data received:', output);
+    // console.log('Data received:', output);
     return JSON.stringify(output);
   } catch (error) {
     console.error('Error fetching data:', error);
