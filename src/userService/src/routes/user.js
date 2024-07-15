@@ -3,6 +3,7 @@ import userController from '../controllers/userController.js';
 
 const router = express.Router();
 
+
 router.get('/:id', userController.getUser);
 
 router.get('/image/:id', userController.getUserProfileImage)
